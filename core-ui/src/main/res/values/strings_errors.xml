@@ -1,0 +1,5 @@
+<resources>
+    <string name="internet_connection_error">Please check internet connection and try again</string>
+    <string name="generic_error">Something went wrong :(</string>
+    <string name="error_invalid_email">Invalid Email</string>
+</resources>

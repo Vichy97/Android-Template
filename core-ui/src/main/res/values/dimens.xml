@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="quarter_spacing">2dp</dimen>
+    <dimen name="half_spacing">4dp</dimen>
+    <dimen name="spacing">8dp</dimen>
+    <dimen name="double_spacing">16dp</dimen>
+    <dimen name="triple_spacing">24dp</dimen>
+    <dimen name="quadruple_spacing">32dp</dimen>
+
+    <dimen name="half_elevation">2dp</dimen>
+    <dimen name="elevation">4dp</dimen>
+
+    <dimen name="corner_radius">4dp</dimen>
+    <dimen name="card_corner_radius">6dp</dimen>
+</resources>
