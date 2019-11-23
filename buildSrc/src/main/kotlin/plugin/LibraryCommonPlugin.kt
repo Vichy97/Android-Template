@@ -1,31 +1,29 @@
 package plugin
 
 import com.android.build.gradle.LibraryExtension
-import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
-import org.gradle.kotlin.dsl.kotlin
 
 class LibraryCommonPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        target.plugins.apply("com.android.library")
-        target.plugins.apply("kotlin-android")
-        target.plugins.apply("kotlin-android-extensions")
-        val extension = target.extensions.getByType<LibraryExtension>()
-        extension.configure()
+        target.plugins.apply(BuildPlugins.ANDROID_LIBRARY)
+        target.plugins.apply(BuildPlugins.KOTLIN_ANDROID)
+        target.plugins.apply(BuildPlugins.KOTLIN_ANDROID_EXTENSIONS)
+
+        target.extensions.getByType<LibraryExtension>().configure()
     }
 
     private fun LibraryExtension.configure() {
-        compileSdkVersion(29)
+        compileSdkVersion(Android.COMPILE_SDK)
 
         defaultConfig {
-            minSdkVersion(21)
-            targetSdkVersion(29)
+            minSdkVersion(Android.MIN_SDK)
+            targetSdkVersion(Android.TARGET_SDK)
 
-            versionCode = 1
-            versionName = "1.0"
+            versionCode = Version.VERSION_CODE
+            versionName = Version.VERSION_NAME
 
             consumerProguardFile("consumer-rules.pro")
         }
@@ -36,15 +34,15 @@ class LibraryCommonPlugin : Plugin<Project> {
             }
         }
 
-        flavorDimensions("environment")
+        flavorDimensions(Flavors.Dimensions.ENVIRONMENT)
         productFlavors {
-            create("develop") {}
-            create("production") {}
+            create(Flavors.DEVELOP)
+            create(Flavors.PRODUCTION)
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = Java.SOURCE_COMPATIBILITY
+            targetCompatibility = Java.TARGET_COMPATIBILITY
         }
     }
 }
