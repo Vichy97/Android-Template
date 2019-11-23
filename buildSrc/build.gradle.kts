@@ -14,9 +14,13 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        register("LibraryCommonPlugin") {
-            id = "libraryCommonPlugin"
-            implementationClass = "plugin.LibraryCommonPlugin"
+        register("AndroidLibraryCommon") {
+            id = "androidLibraryCommon"
+            implementationClass = "plugin.AndroidLibraryCommon"
+        }
+        register("AndroidApplicationCommon") {
+            id = "androidApplicationCommon"
+            implementationClass = "plugin.AndroidApplicationCommon"
         }
     }
 }

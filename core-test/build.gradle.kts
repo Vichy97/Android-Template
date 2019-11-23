@@ -1,5 +1,5 @@
 plugins {
-    id("libraryCommonPlugin")
+    id(BuildPlugins.ANDROID_LIBRARY_COMMON)
 }
 
 dependencies {

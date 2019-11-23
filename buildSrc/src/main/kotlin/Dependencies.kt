@@ -1,16 +1,15 @@
 const val KOTLIN_VERSION = "1.3.60-eap-25"
 const val OBJECTBOX_VERSION = "2.4.1"
+const val INSTRUMENTATION_TEST_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
 
 object BuildPlugins {
 
     private object Versions {
         const val GRADLE_BUILD_TOOLS = "4.0.0-alpha04"
-        const val GOOGLE_SERVICES = "4.3.2"
     }
 
     const val ANDROID_GRADLE = "com.android.tools.build:gradle:${Versions.GRADLE_BUILD_TOOLS}"
     const val KOTLIN_GRADLE= "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
-    const val GOOGLE_SERVICES = "com.google.gms:google-services:${Versions.GOOGLE_SERVICES}"
     const val OBJECTBOX_GRADLE = "io.objectbox:objectbox-gradle-plugin:$OBJECTBOX_VERSION"
 
     const val ANDROID_APPLICATION = "com.android.application"
@@ -20,6 +19,9 @@ object BuildPlugins {
 
     const val KAPT = "kapt"
     const val OBJECTBOX = "io.objectbox"
+
+    const val ANDROID_LIBRARY_COMMON = "androidLibraryCommon"
+    const val ANDROID_APPLICATION_COMMON = "androidApplicationCommon"
 }
 
 object Libraries {
@@ -52,6 +54,7 @@ object Libraries {
 
         private object Versions {
             const val CORE_KTX = "1.1.0"
+            const val APP_COMPAT = "1.1.0"
             const val FRAGMENT = "1.2.0-rc02"
             const val NAVIGATION = "2.2.0-rc02"
             const val CONSTRAINT_LAYOUT = "1.1.3"
@@ -67,6 +70,7 @@ object Libraries {
 
         const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
+        const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
     }
 }
 
@@ -90,6 +94,15 @@ object TestLibraries {
         const val JUNIT_EXT = "androidx.test.ext:junit:${Versions.JUNIT_EXT}"
         const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO_CORE}"
     }
+}
+
+object DebugLibraries {
+
+    private object Versions {
+        const val LEAK_CANARY = "2.0-beta-2"
+    }
+
+    const val LEAK_CANARY = "com.squareup.leakcanary:leakcanary-android:${Versions.LEAK_CANARY}"
 }
 
 object Modules {

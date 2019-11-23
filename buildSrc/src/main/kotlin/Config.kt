@@ -11,6 +11,8 @@ object Android {
     const val COMPILE_SDK = 29
     const val MIN_SDK = 21
     const val TARGET_SDK = 29
+
+    const val APPLICATION_ID = "com.vincent.template"
 }
 
 object Version {
@@ -27,4 +29,10 @@ object Flavors {
 
     const val DEVELOP = "develop"
     const val PRODUCTION = "production"
+}
+
+object BuildTypes {
+
+    const val DEBUG = "debug"
+    const val RELEASE = "release"
 }
