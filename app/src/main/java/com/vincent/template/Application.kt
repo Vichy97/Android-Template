@@ -2,8 +2,6 @@ package com.vincent.template
 
 import android.app.Application
 
-import com.facebook.stetho.Stetho
-
 import com.vincent.database.databaseModule
 import com.vincent.network.networkModule
 import com.vincent.util.utilsModule
@@ -27,7 +25,6 @@ class Application : Application() {
 
         setupLogging()
         setupDependencyInjection()
-        setupStetho()
     }
 
     private fun setupLogging() {
@@ -42,9 +39,5 @@ class Application : Application() {
             androidContext(this@Application)
             modules(modules)
         }
-    }
-
-    private fun setupStetho() {
-        Stetho.initializeWithDefaults(this)
     }
 }

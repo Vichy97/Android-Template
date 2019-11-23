@@ -35,12 +35,6 @@ class AndroidLibraryCommon : Plugin<Project> {
             }
         }
 
-        flavorDimensions(Flavors.Dimensions.ENVIRONMENT)
-        productFlavors {
-            create(Flavors.DEVELOP)
-            create(Flavors.PRODUCTION)
-        }
-
         compileOptions {
             sourceCompatibility = Java.SOURCE_COMPATIBILITY
             targetCompatibility = Java.TARGET_COMPATIBILITY
