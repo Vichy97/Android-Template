@@ -11,8 +11,8 @@ buildscript {
         classpath(BuildPlugins.ANDROID_GRADLE)
         classpath(BuildPlugins.KOTLIN_GRADLE)
         classpath(BuildPlugins.GOOGLE_SERVICES)
+        classpath(BuildPlugins.OBJECTBOX_GRADLE)
         classpath("io.fabric.tools:gradle:1.31.1")
-        classpath("io.objectbox:objectbox-gradle-plugin:2.4.1")
     }
 }
 

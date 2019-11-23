@@ -1,21 +1,21 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("android.extensions")
+    id(BuildPlugins.ANDROID_APPLICATION)
+    id(BuildPlugins.KOTLIN_ANDROID)
+    id(BuildPlugins.KOTLIN_ANDROID_EXTENSIONS)
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(Android.COMPILE_SDK)
 
     defaultConfig {
 
         applicationId = "com.vincent.template"
 
-        minSdkVersion(21)
-        targetSdkVersion(29)
+        minSdkVersion(Android.MIN_SDK)
+        targetSdkVersion(Android.TARGET_SDK)
 
-        versionCode = 3
-        versionName = "1.0"
+        versionCode = Version.VERSION_CODE
+        versionName = Version.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,24 +39,18 @@ android {
         }
     }
 
-    flavorDimensions("environment")
+    flavorDimensions(Flavors.Dimensions.ENVIRONMENT)
     productFlavors {
-        create("develop") {
+        create(Flavors.DEVELOP) {
             applicationIdSuffix = ".develop"
         }
 
-        create("production") {
-
-        }
+        create(Flavors.PRODUCTION)
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
+        sourceCompatibility = Java.SOURCE_COMPATIBILITY
+        targetCompatibility = Java.TARGET_COMPATIBILITY
     }
 }
 

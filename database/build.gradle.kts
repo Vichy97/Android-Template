@@ -1,16 +1,16 @@
 plugins {
     id("libraryCommonPlugin")
-    kotlin("kapt")
-    id("io.objectbox")
+    kotlin(BuildPlugins.KAPT)
+    id(BuildPlugins.OBJECTBOX)
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(project(":core"))
+    implementation(project(Modules.CORE))
 
-    api("io.objectbox:objectbox-kotlin:2.4.1")
-    api("io.objectbox:objectbox-android:2.4.1")
-    api("io.objectbox:objectbox-rxjava:2.4.1")
-    kapt("io.objectbox:objectbox-processor:2.4.1")
+    api(Libraries.OBJECT_BOX_KOTLIN)
+    api(Libraries.OBJECT_BOX_ANDROID)
+
+    kapt(Libraries.OBJECT_BOX_APT)
 }

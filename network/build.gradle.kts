@@ -1,17 +1,15 @@
 plugins {
     id("libraryCommonPlugin")
-    kotlin("kapt")
+    kotlin(BuildPlugins.KAPT)
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(project(":core"))
+    implementation(project(Modules.CORE))
 
-    implementation("com.squareup.retrofit2:retrofit:2.6.2")
-    implementation("com.squareup.retrofit2:converter-moshi:2.6.2")
-    implementation("com.squareup.retrofit2:adapter-rxjava2:2.6.1")
-    implementation("com.facebook.stetho:stetho-okhttp3:1.5.1")
+    implementation(Libraries.RETROFIT)
+    implementation(Libraries.RETROFIT_MOSHI_CONVERTER)
 
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.9.1")
+    kapt(Libraries.MOSHI_CODE_GEN)
 }
