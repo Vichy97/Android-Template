@@ -1,8 +1,10 @@
 rootProject.name="Template"
-include(":app")
-include(":core")
-include(":network")
-include(":core-test")
-include(":database")
-include(":core-ui")
-include(":util")
+include(
+    ":app",
+    ":core",
+    ":core-ui",
+    ":core-test",
+    ":util",
+    ":network",
+    ":database"
+)

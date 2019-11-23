@@ -1,23 +1,11 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("android.extensions")
+    id(BuildPlugins.ANDROID_APPLICATION_COMMON)
 }
 
 android {
-    compileSdkVersion(29)
 
     defaultConfig {
-
-        applicationId = "com.vincent.template"
-
-        minSdkVersion(21)
-        targetSdkVersion(29)
-
-        versionCode = 3
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = INSTRUMENTATION_TEST_RUNNER
     }
 
     buildTypes {
@@ -27,52 +15,27 @@ android {
                     "proguard-rules.pro"
             )
         }
-
-        getByName("release") {
-            isShrinkResources = true
-            isMinifyEnabled = true
-        }
-
-        getByName("debug"){
-            isShrinkResources = false
-            isMinifyEnabled = false
-        }
     }
 
-    flavorDimensions("environment")
     productFlavors {
-        create("develop") {
+        getByName(Flavors.DEVELOP) {
             applicationIdSuffix = ".develop"
         }
-
-        create("production") {
-
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(project(":network"))
-    implementation(project(":database"))
-    implementation(project(":core-ui"))
-    implementation(project(":util"))
-    implementation(project(":core"))
+    implementation(project(Modules.CORE))
+    implementation(project(Modules.CORE_UI))
+    implementation(project(Modules.UTIL))
+    implementation(project(Modules.NETWORK))
+    implementation(project(Modules.DATABASE))
 
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("com.facebook.stetho:stetho:1.5.1")
+    implementation(Libraries.AndroidX.APP_COMPAT)
 
-    testImplementation(project(":core-test"))
+    testImplementation(project(Modules.CORE_TEST))
 
-    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.0-beta-2")
+    debugImplementation(DebugLibraries.LEAK_CANARY)
 }
