@@ -3,8 +3,8 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven(url = "https://maven.fabric.io/public")
-        maven(url = "https://dl.bintray.com/kotlin/kotlin-eap")
+        maven("https://maven.fabric.io/public")
+        maven("https://dl.bintray.com/kotlin/kotlin-eap")
     }
 
     dependencies {
