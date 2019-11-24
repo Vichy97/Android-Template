@@ -1,12 +1,12 @@
-package com.vincent.core_ui
+package com.vincent.core_ui.base
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
-import androidx.annotation.MenuRes
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.DialogFragment
 
 import com.google.android.material.snackbar.Snackbar
 
@@ -16,11 +16,10 @@ import org.koin.core.error.DefinitionOverrideException
 import org.koin.core.module.Module
 import timber.log.Timber
 
-abstract class BaseFragment(
-    @LayoutRes layoutId: Int,
-    @MenuRes private val menuId: Int? = null,
+abstract class BaseDialogFragment(
+    @LayoutRes private val layoutId: Int,
     private val module: Module? = null
-) : Fragment(layoutId) {
+) : DialogFragment() {
 
     private var snackbar: Snackbar? = null
 
@@ -33,17 +32,24 @@ abstract class BaseFragment(
     }
 
     @CallSuper
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onStart() {
+        super.onStart()
 
-        menuId?.let { setHasOptionsMenu(true) }
+        dialog?.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
     }
 
     @CallSuper
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
 
-        menuId?.let { inflater.inflate(menuId, menu) }
+        return inflater.inflate(layoutId, container, false)
     }
 
     @CallSuper
