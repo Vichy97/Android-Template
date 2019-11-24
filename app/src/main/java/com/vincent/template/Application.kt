@@ -2,7 +2,6 @@ package com.vincent.template
 
 import android.app.Application
 
-import com.vincent.database.databaseModule
 import com.vincent.network.networkModule
 import com.vincent.util.utilsModule
 
@@ -16,8 +15,7 @@ class Application : Application() {
 
     private val modules = listOf(
         utilsModule,
-        networkModule,
-        databaseModule
+        networkModule
     )
 
     override fun onCreate() {

@@ -25,13 +25,10 @@ android {
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-
     implementation(project(Modules.CORE))
     implementation(project(Modules.CORE_UI))
     implementation(project(Modules.UTIL))
     implementation(project(Modules.NETWORK))
-    implementation(project(Modules.DATABASE))
 
     implementation(Libraries.AndroidX.APP_COMPAT)
 

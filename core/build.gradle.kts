@@ -1,10 +1,8 @@
 plugins {
-    id(BuildPlugins.ANDROID_LIBRARY_COMMON)
+    id("java-library")
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-
     api(Libraries.KOTLIN_STD_LIB)
     api(Libraries.AndroidX.CORE_KTX)
 

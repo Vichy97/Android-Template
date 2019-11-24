@@ -10,7 +10,6 @@ buildscript {
     dependencies {
         classpath(BuildPlugins.ANDROID_GRADLE)
         classpath(BuildPlugins.KOTLIN_GRADLE)
-        classpath(BuildPlugins.OBJECTBOX_GRADLE)
     }
 }
 

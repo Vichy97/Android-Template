@@ -3,8 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-
     implementation(project(Modules.CORE))
     implementation(project(Modules.UTIL))
 

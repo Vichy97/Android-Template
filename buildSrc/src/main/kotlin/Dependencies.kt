@@ -1,5 +1,4 @@
 const val KOTLIN_VERSION = "1.3.60-eap-25"
-const val OBJECTBOX_VERSION = "2.4.1"
 const val INSTRUMENTATION_TEST_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
 
 object BuildPlugins {
@@ -10,7 +9,6 @@ object BuildPlugins {
 
     const val ANDROID_GRADLE = "com.android.tools.build:gradle:${Versions.GRADLE_BUILD_TOOLS}"
     const val KOTLIN_GRADLE= "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
-    const val OBJECTBOX_GRADLE = "io.objectbox:objectbox-gradle-plugin:$OBJECTBOX_VERSION"
 
     const val ANDROID_APPLICATION = "com.android.application"
     const val ANDROID_LIBRARY = "com.android.library"
@@ -18,7 +16,6 @@ object BuildPlugins {
     const val KOTLIN_ANDROID_EXTENSIONS = "kotlin-android-extensions"
 
     const val KAPT = "kapt"
-    const val OBJECTBOX = "io.objectbox"
 
     const val ANDROID_LIBRARY_COMMON = "androidLibraryCommon"
     const val ANDROID_APPLICATION_COMMON = "androidApplicationCommon"
@@ -42,10 +39,6 @@ object Libraries {
 
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
     const val RETROFIT_MOSHI_CONVERTER = "com.squareup.retrofit2:converter-moshi:${Versions.RETROFIT}"
-
-    const val OBJECT_BOX_KOTLIN = "io.objectbox:objectbox-kotlin:$OBJECTBOX_VERSION"
-    const val OBJECT_BOX_ANDROID = "io.objectbox:objectbox-android:$OBJECTBOX_VERSION"
-    const val OBJECT_BOX_APT = "io.objectbox:objectbox-processor:$OBJECTBOX_VERSION"
 
     const val KOIN_ANDROID = "org.koin:koin-android:${Versions.KOIN}"
     const val KOIN_VIEW_MODEL = "org.koin:koin-androidx-viewmodel:${Versions.KOIN}"

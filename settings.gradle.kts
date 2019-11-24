@@ -5,6 +5,5 @@ include(
     ":core-ui",
     ":core-test",
     ":util",
-    ":network",
-    ":database"
+    ":network"
 )
